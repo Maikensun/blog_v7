@@ -4,12 +4,27 @@
 		<meta charset="utf-8"/>
 		<title>JSONP ejemplo</title>
 		<script src="estaticos/javascript/lib/jquery.min.js"></script>
-		<script>
-			
-		</script>
+		
 	</head>
 	<body>
 		<div id="imagenes"></div>
+		<script>
+			
+			$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?ids=61481595@N05&format=json&jsoncallback=?",function(datos){
+				
+				var fotos = datos.items;
+				
+				fotos.forEach(function(foto){
+					var titulo = foto.title;
+					var urlImagen = foto.media.m;
+					
+					var caja = "<div>" + "<img src='"+urlImagen+"'>" + "<h1>" + titulo + "</h1>" + "<p>" + foto.description + "</p>" + "</div>";
+					
+					$("#imagenes").append(caja);
+				});
+				
+			});
+		</script>
 	</body>
 </html>
 
