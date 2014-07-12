@@ -52,14 +52,16 @@ app.use(bodyParser());
 
 rutas.configurar(app);
 //SOLUCION EJERCICIO modulos
-modelos.configurar();
+modelos.configurar(function(){
+	servidor.listen(8081);
+});
 
 //HABILITA WEBSOCKETS EN EL SERVIDOR CON SOCKET.IO
 //io = me permite escuchar y responder a mis clientes usando 
 //websockets
 var io = socketio.listen(servidor);
 
-servidor.listen(8081);
+
 
 //CUANDO ALGUIEN PONGA http://localhost:8081/
 

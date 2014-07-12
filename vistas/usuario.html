@@ -1,0 +1,15 @@
+{%extends "layout.html"%}
+
+{%block contenido%}
+
+	<article>
+		<h1>Nombre: {{usuario.nombre}}</h1>
+		<p>Email: {{usuario.email}}</p>
+	</article>
+	<section>
+		<h2>Articulos:</h2>
+		{%for articulo in usuario.articulos%}
+			<h3>{{articulo.titulo}}</h3>
+		{%endfor%}
+	</section>
+{%endblock%}

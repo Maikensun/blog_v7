@@ -1,0 +1,14 @@
+{%extends "layout.html"%}
+
+{%block contenido%}
+
+	<article>
+		<h1>{{articulo.titulo}}</h1>
+		<p>{{articulo.contenido}}</p>
+	</article>
+	
+	{%for comentario in articulo.comentarios%}
+   		<p>{{comentario.comentario}} - {{comentario.autor}}</p>
+   	{%endfor%}
+
+{%endblock%}
