@@ -11,4 +11,10 @@
    		<p>{{comentario.comentario}} - {{comentario.autor}}</p>
    	{%endfor%}
 
+	<ul> Categorias del Post
+		{%for categoria in articulo.categorias%}
+			<li>{{categoria.nombre}}</li>
+		{%endfor%}
+	</ul>
+
 {%endblock%}

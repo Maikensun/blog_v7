@@ -82,6 +82,20 @@ Articulo.hasMany(Comentario,{
 	as:"comentarios"
 });
 
+// ====================== MAPEO N-N
+Articulo .hasMany(Categoria,{
+	foreignKey:"articulo_id",
+	as:"categorias",
+	//ESTO ES SOLO PARA N-N
+	through:"categorias_articulos"
+});
+
+Categoria.hasMany(Articulo,{
+	foreignKey:"categoria_id",
+	as:"articulos",
+	through:"categorias_articulos"
+});
+
 //HACEMOS VISIBLE EL MODELO ASOCIADO AL A TABLA
 module.exports.Articulo = Articulo;
 module.exports.Usuario = Usuario;

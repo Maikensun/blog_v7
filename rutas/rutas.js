@@ -143,6 +143,9 @@ module.exports.configurar = function(app) {
 			include:[{
 				model:modelos.Comentario,
 				as:"comentarios"
+			},{
+				model:modelos.Categoria,
+				as:"categorias"
 			}]
 		}).success(function(articulo){
 			//AQUI PONEMOS EL CODIGO A EJECUTAR
